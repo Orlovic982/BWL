@@ -1,0 +1,2 @@
+rootProject.name = "BWL News"
+include ':app'

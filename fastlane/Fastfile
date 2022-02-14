@@ -1,0 +1,15 @@
+default_platform(:android)
+
+platform :android do
+
+  desc "Build dev and upload to Firebase App Distribution"
+  lane :dev do
+    gradle(task: "clean assembleDevRelease")
+    firebase_app_distribution(
+      app: "1:76588847068:android:973924f0f9660c6c6c8919",
+      groups: "Fastlane",
+      release_notes_file: "./release-notes.txt"
+    )
+  end
+
+end

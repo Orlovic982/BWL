@@ -1,0 +1,27 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Colors only -->
+    <style name="Theme.BwlNews" parent="Theme.MaterialComponents.Light">
+        <item name="android:statusBarColor" tools:targetApi="L">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorPrimary">@color/bwl</item>
+        <item name="colorPrimaryVariant">@color/bwl</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/bwl</item>
+        <item name="colorSecondaryVariant">@color/bwl</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Custom colors defined in attrs.xml -->
+        <item name="colorContainerBackground">@color/white</item>
+        <item name="colorBackgroundOpacity">@color/whisper</item>
+    </style>
+
+    <!-- Common theme -->
+    <style name="Theme.BwlNews.Common">
+        <item name="android:forceDarkAllowed" tools:targetApi="Q">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

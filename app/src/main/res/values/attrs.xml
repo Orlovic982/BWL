@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Theme.BwlNews">
+        <attr name="colorContainerBackground" format="reference" />
+        <attr name="colorBackgroundOpacity" format="reference" />
+    </declare-styleable>
+
+</resources>
