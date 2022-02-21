@@ -12,7 +12,9 @@ import com.bridgewaterlabs.news.ui.common.BaseFragment
 
 class SplashFragment : BaseFragment() {
     private lateinit var binding: FragmentSplashBinding
-
+private val mhandler=Handler(Looper.getMainLooper())
+    val action = SplashFragmentDirections.actionSplashToLogin()
+    val r = Runnable { findNavController().navigate(action) }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -26,9 +28,12 @@ class SplashFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val action= SplashFragmentDirections.actionSplashToLogin()
-        val r =Runnable { findNavController().navigate(action) }
-        Handler(Looper.getMainLooper()).postDelayed(r, 2000)
+         mhandler.postDelayed(r, 2000)
 
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mhandler.removeCallbacks(r)
     }
 }
