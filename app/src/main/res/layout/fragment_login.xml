@@ -11,6 +11,7 @@
         android:padding="20dp">
 
         <!-- TODO: Update blank fragment layout -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +28,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Welcome to Bridewater Labs"
+                android:text="@string/welocemsg"
                 android:textAlignment="center"
                 android:textColor="#555555"
                 android:textSize="38sp" />
@@ -37,33 +38,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="We present you an app to help you with tehnical onboarding"
+                android:text="@string/onboardingtext"
                 android:textAlignment="center"
                 android:textSize="18dp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email" />
+                android:hint="@string/email" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password" />
+                android:hint="@string/password"
+                android:drawableEnd="@drawable/ic_eyebutton"/>
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="Forgot password?"
+                android:text="@string/forgot_password"
                 android:textColor="#3AA6DD" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="login" />
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:outlineProvider="none"/>
 
 
         </LinearLayout>
@@ -78,13 +82,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Don't have an account?"
+                android:text="@string/don_t_have_an_account"
                 android:textAlignment="center" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Create an account" />
+                android:text="@string/create_an_account"
+                android:textAllCaps="false"/>
 
 
         </LinearLayout>
