@@ -3,4 +3,11 @@
     <string name="app_name">BWL News</string>
     <string name="splash">Splash</string>
     <string name="login">Login</string>
+    <string name="welocemsg">Welcome to Bridewater Labs</string>
+    <string name="onboardingtext">We present you an app to help you with tehnical onboarding</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="create_an_account">Create new account</string>
 </resources>
