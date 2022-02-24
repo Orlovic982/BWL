@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_onboarding"
@@ -8,8 +7,8 @@
 
     <fragment
         android:id="@+id/splash"
-        android:label="Splash"
         android:name="com.bridgewaterlabs.news.ui.onboarding.splash.SplashFragment"
+        android:label="Splash"
         tools:layout="@layout/fragment_splash">
 
         <action
@@ -20,8 +19,27 @@
 
     <fragment
         android:id="@+id/login"
-        android:label="Login"
         android:name="com.bridgewaterlabs.news.ui.onboarding.login.LoginFragment"
-        tools:layout="@layout/fragment_login" />
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.bridgewaterlabs.news.ui.onboarding.forgotpassword.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgotpassword">
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.bridgewaterlabs.news.ui.onboarding.resetpassword.ResetPasswordFragment"
+        android:label="ResetPasswordFragment"
+        tools:layout="@layout/fragment_resetpassword" />
+
 
 </navigation>
