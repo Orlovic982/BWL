@@ -6,12 +6,10 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bridgewaterlabs.news.databinding.FragmentForgotpasswordBinding
 import com.bridgewaterlabs.news.ui.common.BaseFragment
-import com.bridgewaterlabs.news.ui.onboarding.resetpassword.ResetPasswordViewModel
 
 class ForgotPasswordFragment : BaseFragment() {
 
@@ -28,7 +26,7 @@ class ForgotPasswordFragment : BaseFragment() {
         binding = FragmentForgotpasswordBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(ForgotPasswordViewModel::class.java)
 
-        binding.viewmodel=viewModel
+        binding.viewmodel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         viewModel.isChecked.observe(viewLifecycleOwner) {
             binding.btnForgotPassword.isEnabled = it
@@ -42,17 +40,13 @@ class ForgotPasswordFragment : BaseFragment() {
             }
             override fun afterTextChanged(p0: Editable?) {
             }
-
         })
-
-
-
 
         binding.btnForgotPassword.setOnClickListener() {
             findNavController().navigate(action)
         }
 
-        binding.ivBack.setOnClickListener(){
+        binding.ivBack.setOnClickListener() {
             findNavController().navigateUp()
         }
         return binding.root

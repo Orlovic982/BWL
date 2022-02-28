@@ -26,7 +26,7 @@ class ResetPasswordFragment : BaseFragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
         viewModel = ViewModelProvider(this).get(ResetPasswordViewModel::class.java)
-        binding.viewmodel=viewModel
+        binding.viewmodel = viewModel
 
         viewModel.isChecked.observe(viewLifecycleOwner) {
             binding.btnResetPassword.isEnabled = it
@@ -40,15 +40,13 @@ class ResetPasswordFragment : BaseFragment() {
             }
             override fun afterTextChanged(p0: Editable?) {
             }
-
         })
-
 
         binding.btnResetPassword.setOnClickListener() {
             var dialog = SuccessResetDialogFragment()
             dialog.show(childFragmentManager, "Success")
         }
-        binding.ivBack.setOnClickListener(){
+        binding.ivBack.setOnClickListener() {
             findNavController().navigateUp()
         }
         return binding.root
