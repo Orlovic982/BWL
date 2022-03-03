@@ -5,5 +5,11 @@ import androidx.lifecycle.ViewModel
 
 class ForgotPasswordViewModel : ViewModel() {
 
-    var isChecked = MutableLiveData(false)
+    val email = MutableLiveData<String>()
+    var isChecked = MutableLiveData<Boolean>()
+
+    init {
+        email.value = ""
+        isChecked.value = false
+    }
 }

@@ -4,6 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ResetPasswordViewModel : ViewModel() {
-
-    var isChecked = MutableLiveData(false)
+    var email = MutableLiveData<String>("")
+    var password = MutableLiveData<String>("")
 }

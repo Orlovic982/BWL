@@ -32,7 +32,7 @@
         android:label="ForgotPasswordFragment"
         tools:layout="@layout/fragment_forgotpassword">
         <action
-            android:id="@+id/action_forgotPasswordFragment_to_resetPasswordFragment"
+            android:id="@+id/action_forgotPassword_to_resetPassword"
             app:destination="@id/resetPasswordFragment" />
     </fragment>
     <fragment
