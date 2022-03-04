@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="28dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_success" />
+
+    <TextView
+        android:id="@+id/btnGonext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/done"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:text="@string/you_successfully_created_your_account"
+        android:textAlignment="center"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="263dp"
+        android:layout_height="wrap_content"
+        android:text="Continue to App"
+        android:textAllCaps="false"
+        android:layout_marginTop="25dp"/>
+</LinearLayout>

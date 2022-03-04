@@ -24,6 +24,11 @@ class LoginFragment : BaseFragment() {
             findNavController().navigate(action)
         }
 
+        binding.btnRegister.setOnClickListener(){
+            var action=LoginFragmentDirections.actionLoginToRegisterFragment()
+            findNavController().navigate(action)
+        }
+
         return binding.root
     }
 }
