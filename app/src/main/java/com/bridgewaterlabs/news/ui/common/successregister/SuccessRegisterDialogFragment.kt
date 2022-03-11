@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.bridgewaterlabs.news.databinding.DialogFragmentSuccesRegisterBinding
-import com.bridgewaterlabs.news.databinding.DialogFragmentSuccesResetBinding
 
 class SuccessRegisterDialogFragment : DialogFragment() {
 

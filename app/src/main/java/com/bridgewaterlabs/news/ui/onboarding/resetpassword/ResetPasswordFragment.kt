@@ -4,17 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bridgewaterlabs.news.databinding.FragmentResetpasswordBinding
 import com.bridgewaterlabs.news.ui.common.BaseFragment
 import com.bridgewaterlabs.news.ui.common.successreset.SuccessResetDialogFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ResetPasswordFragment : BaseFragment() {
 
     private lateinit var binding: FragmentResetpasswordBinding
-    private lateinit var viewModel: ResetPasswordViewModel
-
+    private val viewModel: ResetPasswordViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,7 +24,6 @@ class ResetPasswordFragment : BaseFragment() {
         binding = FragmentResetpasswordBinding.inflate(inflater, container, false)
 
         binding.lifecycleOwner = viewLifecycleOwner
-        viewModel = ViewModelProvider(this).get(ResetPasswordViewModel::class.java)
         binding.viewmodel = viewModel
 
         binding.btnResetPassword.setOnClickListener() {

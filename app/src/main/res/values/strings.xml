@@ -27,4 +27,6 @@
     <string name="register">Register</string>
     <string name="you_successfully_created_your_account">You successfully created your account.</string>
     <string name="logo">logo</string>
+    <string name="continue_to_app">Continue to App</string>
+    <string name="please_full_this_form_to_create_new_account">Please full this form to create new account.</string>
 </resources>
