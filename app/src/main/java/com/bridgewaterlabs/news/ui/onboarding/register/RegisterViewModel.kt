@@ -1,11 +1,9 @@
 package com.bridgewaterlabs.news.ui.onboarding.register
 
-import android.content.Intent
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bridgewaterlabs.news.ui.onboarding.forgotpassword.ForgotPasswordViewModel
 
 class RegisterViewModel : ViewModel() {
 
@@ -16,7 +14,6 @@ class RegisterViewModel : ViewModel() {
     var confirmPassword = MutableLiveData<String>("")
     var isChecked = MutableLiveData<Boolean>(false)
 
-
     var button = checkRegistration()
 
     private fun checkRegistration(): LiveData<Boolean> {
@@ -25,7 +22,7 @@ class RegisterViewModel : ViewModel() {
         var emailCheck = false
         var passwordCheck = false
         var confirmPasswordCheck = false
-        var checked=false
+        var checked = false
         fun checkResult() =
             firstname && lastname && emailCheck && passwordCheck && confirmPasswordCheck && checked
 
@@ -61,14 +58,11 @@ class RegisterViewModel : ViewModel() {
             }
             result.value = checkResult()
         }
-        result.addSource(isChecked){
-            checked=it
-            result.value=checkResult()
+        result.addSource(isChecked) {
+            checked = it
+            result.value = checkResult()
         }
-
 
         return result
     }
-
-
 }

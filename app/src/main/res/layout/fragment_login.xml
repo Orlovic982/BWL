@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.bridgewaterlabs.news.ui.onboarding.login.LoginViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,10 +31,10 @@
             android:orientation="vertical">
 
             <ImageView
-                android:contentDescription="@string/logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/logo"
                 android:src="@drawable/ic_logocolored" />
 
             <TextView
@@ -54,36 +61,55 @@
                 android:textAlignment="center"
                 android:textSize="15sp" />
 
-            <EditText
-                android:autofillHints=""
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="43dp"
-                android:paddingTop="9dp"
-                android:inputType="textEmailAddress"
-                android:paddingBottom="9dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints=""
                 android:hint="@string/email"
-                android:background="@drawable/email_stroke"/>
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="#C4C4C4">
 
-            <EditText
-                android:inputType="textPassword"
-                android:autofillHints=""
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="@={viewmodel.email}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:paddingTop="9dp"
-                android:background="@drawable/email_stroke"
-                android:paddingBottom="9dp"
-                android:drawableEnd="@drawable/ic_eyebutton"
+                android:layout_marginTop="12dp"
+                android:autofillHints=""
                 android:hint="@string/password"
-                />
+                app:passwordToggleEnabled="true"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="#C4C4C4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="@={viewmodel.password}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/tvForgotPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="end"
                 android:layout_marginTop="15dp"
+                android:gravity="end"
                 android:text="@string/forgot_password"
                 android:textColor="@color/bwlcolor" />
 

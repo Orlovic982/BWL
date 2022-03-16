@@ -50,41 +50,44 @@ class RegisterFragment : BaseFragment() {
     fun linkTermAndConditions() {
         val span = object : ClickableSpan() {
             override fun onClick(p0: View) {
-                TODO("Not yet implemented")
+//                val url = "https://google.rs/"
+//            CustomTabsIntent.Builder()
+//                .build()
+//                .launchUrl(this, Uri.parse(url))
+//
             }
 
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
                 ds.color = Color.parseColor("#3AA6DD")
-                ds.isUnderlineText=false
-
+                ds.isUnderlineText = false
             }
         }
 
         privacyPolicy.setSpan(span, 13, 33, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.privacyPolicy.text = privacyPolicy
         binding.privacyPolicy.movementMethod = LinkMovementMethod.getInstance()
-
     }
 
-    fun linkPrivacyPolicy(){
-        val span=object : ClickableSpan(){
+    fun linkPrivacyPolicy() {
+        val span = object : ClickableSpan() {
             override fun onClick(p0: View) {
-                TODO("Not yet implemented")
+//          val url = "https://google.rs/"
+//            CustomTabsIntent.Builder()
+//                .build()
+//                .launchUrl(this, Uri.parse(url))
+//
             }
 
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
-                ds.color=Color.parseColor("#3AA6DD")
-                ds.isUnderlineText=false
-
+                ds.color = Color.parseColor("#3AA6DD")
+                ds.isUnderlineText = false
             }
         }
-        privacyPolicy.setSpan(span,37,51, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        privacyPolicy.setSpan(span, 37, 51, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-        binding.privacyPolicy.text=privacyPolicy
-        binding.privacyPolicy.movementMethod=LinkMovementMethod.getInstance()
-
+        binding.privacyPolicy.text = privacyPolicy
+        binding.privacyPolicy.movementMethod = LinkMovementMethod.getInstance()
     }
-
 }

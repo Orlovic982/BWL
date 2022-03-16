@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bridgewaterlabs.news.databinding.FragmentForgotpasswordBinding
 import com.bridgewaterlabs.news.ui.common.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class ForgotPasswordFragment : BaseFragment() {
 
@@ -35,6 +33,5 @@ class ForgotPasswordFragment : BaseFragment() {
             findNavController().navigateUp()
         }
         return binding.root
-
     }
 }
