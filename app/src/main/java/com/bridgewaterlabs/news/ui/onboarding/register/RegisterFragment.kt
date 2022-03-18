@@ -1,6 +1,7 @@
 package com.bridgewaterlabs.news.ui.onboarding.register
 
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
@@ -10,7 +11,9 @@ import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.navigation.fragment.findNavController
+import com.bridgewaterlabs.news.R
 import com.bridgewaterlabs.news.databinding.FragmentRegisterBinding
 import com.bridgewaterlabs.news.ui.common.BaseFragment
 import com.bridgewaterlabs.news.ui.common.successregister.SuccessRegisterDialogFragment
@@ -19,8 +22,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class RegisterFragment : BaseFragment() {
     lateinit var binding: FragmentRegisterBinding
     private val viewModel: RegisterViewModel by viewModel()
-    private val privacyPolicy =
-        SpannableString("I agree with Terms and Conditions an Privacy Policy")
+    lateinit var text1: String
+    lateinit var text2: String
+
+    lateinit var spannable: SpannableString
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,47 +41,45 @@ class RegisterFragment : BaseFragment() {
             val dialog = SuccessRegisterDialogFragment()
             dialog.show(childFragmentManager, "Success")
         }
-
+        resources.getString(R.string.app_name)
         binding.ivBack.setOnClickListener() {
             findNavController().navigateUp()
         }
 
-        linkTermAndConditions()
-        linkPrivacyPolicy()
+        text1 = resources.getString(R.string.terms_and_conditions)
+        text2 = resources.getString(R.string.privacy_policy)
+        val spannable = SpannableString(
+            resources.getString(
+                R.string.i_agree_withterms_and_conditions_an_privacy_policy,
+                text1,
+                text2
+            )
+        )
+        setHyperLink(spannable, text1, "https://www.google.rs")
+        setHyperLink(spannable, text2, "https://www.facebook.com")
 
         return binding.root
     }
 
-    fun linkTermAndConditions() {
-        val span = object : ClickableSpan() {
-            override fun onClick(p0: View) {
-//                val url = "https://google.rs/"
-//            CustomTabsIntent.Builder()
-//                .build()
-//                .launchUrl(this, Uri.parse(url))
-//
-            }
+    fun setHyperLink(spannableString: SpannableString, text: String, url: String) {
+        val span = setClickableSpan(url)
+        spannableString?.setSpan(
+            span,
+            spannableString.indexOf(text),
+            spannableString.indexOf(text) + text.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
 
-            override fun updateDrawState(ds: TextPaint) {
-                super.updateDrawState(ds)
-                ds.color = Color.parseColor("#3AA6DD")
-                ds.isUnderlineText = false
-            }
-        }
-
-        privacyPolicy.setSpan(span, 13, 33, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        binding.privacyPolicy.text = privacyPolicy
+        binding.privacyPolicy.text = spannableString
         binding.privacyPolicy.movementMethod = LinkMovementMethod.getInstance()
     }
 
-    fun linkPrivacyPolicy() {
+    fun setClickableSpan(url: String): ClickableSpan {
         val span = object : ClickableSpan() {
             override fun onClick(p0: View) {
-//          val url = "https://google.rs/"
-//            CustomTabsIntent.Builder()
-//                .build()
-//                .launchUrl(this, Uri.parse(url))
-//
+                CustomTabsIntent.Builder()
+                    .build()
+                    .launchUrl(requireContext(), Uri.parse(url))
             }
 
             override fun updateDrawState(ds: TextPaint) {
@@ -85,9 +88,6 @@ class RegisterFragment : BaseFragment() {
                 ds.isUnderlineText = false
             }
         }
-        privacyPolicy.setSpan(span, 37, 51, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-        binding.privacyPolicy.text = privacyPolicy
-        binding.privacyPolicy.movementMethod = LinkMovementMethod.getInstance()
+        return span
     }
 }

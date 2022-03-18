@@ -15,6 +15,11 @@
         <!-- Custom colors defined in attrs.xml -->
         <item name="colorContainerBackground">@color/white</item>
         <item name="colorBackgroundOpacity">@color/whisper</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="colorHint">@color/hint_color</item>
+
+
+
     </style>
 
     <!-- Common theme -->

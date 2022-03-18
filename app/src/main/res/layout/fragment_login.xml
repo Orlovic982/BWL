@@ -10,151 +10,155 @@
             type="com.bridgewaterlabs.news.ui.onboarding.login.LoginViewModel" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="28dp">
-
-        <!-- TODO: Update blank fragment layout -->
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="28dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:contentDescription="@string/logo"
-                android:src="@drawable/ic_logocolored" />
 
-            <TextView
-                android:id="@+id/textView2"
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="76dp"
-                android:layout_marginTop="40dp"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
-                android:text="@string/welocemsg"
-                android:textAlignment="center"
-                android:textColor="#555555"
-                android:textSize="33sp"
-                android:textStyle="bold" />
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="10dp"
-                android:paddingStart="60dp"
-                android:paddingEnd="60dp"
-                android:text="@string/onboardingtext"
-                android:textAlignment="center"
-                android:textSize="15sp" />
-
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:autofillHints=""
-                android:hint="@string/email"
-                app:boxBackgroundColor="@color/white"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="#C4C4C4">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etEmail"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/logo"
+                    android:src="@drawable/ic_logocolored" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="76dp"
+                    android:layout_marginTop="40dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:text="@string/welocemsg"
+                    android:textAlignment="center"
+                    android:textSize="33sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="60dp"
+                    android:paddingEnd="60dp"
+                    android:text="@string/onboardingtext"
+                    android:textAlignment="center"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:paddingStart="0dp"
-                    android:paddingEnd="0dp"
-                    android:text="@={viewmodel.email}" />
+                    android:layout_marginTop="12dp"
+                    android:autofillHints=""
+                    android:hint="@string/email"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/hint_color"
+                    app:hintTextColor="#C4C4C4">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="@={viewmodel.email}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:autofillHints=""
-                android:hint="@string/password"
-                app:passwordToggleEnabled="true"
-                app:boxBackgroundColor="@color/white"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="#C4C4C4">
-
-                <com.google.android.material.textfield.TextInputEditText
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:paddingStart="0dp"
-                    android:paddingEnd="0dp"
-                    android:text="@={viewmodel.password}" />
+                    android:layout_marginTop="12dp"
+                    android:autofillHints=""
+                    android:hint="@string/password"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/hint_color"
+                    app:hintTextColor="#C4C4C4"
+                    app:passwordToggleEnabled="true">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="@={viewmodel.password}" />
 
-            <TextView
-                android:id="@+id/tvForgotPassword"
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvForgotPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="end"
+                    android:text="@string/forgot_password"
+                    android:textColor="@color/bwlcolor" />
+
+                <Button
+                    style="@style/Button.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="15dp"
+                    android:baselineAligned="true"
+                    android:stateListAnimator="@null"
+                    android:text="@string/login" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="end"
-                android:text="@string/forgot_password"
-                android:textColor="@color/bwlcolor" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                style="@style/Button.Primary"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:layout_marginTop="15dp"
-                android:baselineAligned="true"
-                android:stateListAnimator="@null"
-                android:text="@string/login" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/don_t_have_an_account"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    style="@style/Button.Ghost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/create_an_account" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/don_t_have_an_account"
-                android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/btnRegister"
-                style="@style/Button.Ghost"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:stateListAnimator="@null"
-                android:text="@string/create_an_account" />
-
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 </layout>
