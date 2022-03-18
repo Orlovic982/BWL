@@ -4,6 +4,7 @@
     <declare-styleable name="Theme.BwlNews">
         <attr name="colorContainerBackground" format="reference" />
         <attr name="colorBackgroundOpacity" format="reference" />
+        <attr name="colorHint" format="reference" />
     </declare-styleable>
 
 </resources>

@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_login_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_login_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -40,6 +43,11 @@
         android:name="com.bridgewaterlabs.news.ui.onboarding.resetpassword.ResetPasswordFragment"
         android:label="ResetPasswordFragment"
         tools:layout="@layout/fragment_resetpassword" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.bridgewaterlabs.news.ui.onboarding.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register"/>
 
 
 </navigation>

@@ -20,7 +20,12 @@ class LoginFragment : BaseFragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.tvForgotPassword.setOnClickListener() {
-            var action = LoginFragmentDirections.actionLoginToForgotPasswordFragment()
+            val action = LoginFragmentDirections.actionLoginToForgotPasswordFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnRegister.setOnClickListener() {
+            val action = LoginFragmentDirections.actionLoginToRegisterFragment()
             findNavController().navigate(action)
         }
 

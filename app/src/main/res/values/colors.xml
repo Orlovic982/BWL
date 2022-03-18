@@ -5,4 +5,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="whisper">#FFF5F5F9</color>
     <color name="bwlcolor">#3AA6DD</color>
+    <color name="black_text">#555555</color>
+    <color name="hint_color">#C4C4C4</color>
 </resources>
