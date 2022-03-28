@@ -1,5 +1,6 @@
 package com.bridgewaterlabs.news.ui.main
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -25,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         navController= navHostFragment.findNavController()
 
         binding.bottomNavigation.setupWithNavController(navController)
+
+        binding.bottomNavigation.getOrCreateBadge(R.id.notificationsFragment).apply {
+            number=10
+            isVisible=true
+            backgroundColor= Color.parseColor("#3AA6DD")
+        }
 
 
 
