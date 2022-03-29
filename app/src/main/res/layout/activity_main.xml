@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".ui.main.MainActivity">
@@ -23,43 +23,172 @@
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 app:defaultNavHost="true"
 
+                app:layout_constraintTop_toTopOf="parent"
                 app:navGraph="@navigation/navigation_main" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="Button"
-                android:src="@drawable/ic_add"
-                app:layout_anchor="@id/bottomBar" />
 
-
-            <com.google.android.material.bottomappbar.BottomAppBar
-                android:id="@+id/bottomBar"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottomNavigation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                app:fabCradleMargin="7dp">
+                android:padding="30dp"
+                android:layout_height="wrap_content" android:background="@color/white"
 
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:id="@+id/bottomNavigation"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="83dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <LinearLayout
+                    android:id="@+id/homeFragment"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:menu="@menu/menu_home" />
-
-            </com.google.android.material.bottomappbar.BottomAppBar>
 
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-        
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/employeesFragment"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_home"
+                        tools:layout_editor_absoluteX="27dp"
+                        tools:layout_editor_absoluteY="116dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Home"
+                        android:textColor="@color/bwl"
+                        tools:layout_editor_absoluteX="22dp"
+                        tools:layout_editor_absoluteY="142dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/employeesFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/homeFragment">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_employee"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="116dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emloyees"
+                        android:textColor="@color/hint_color"
+                        tools:layout_editor_absoluteX="68dp"
+                        tools:layout_editor_absoluteY="142dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/button"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:background="@drawable/ic_action_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/notificationsFragment"
+                    app:layout_constraintStart_toEndOf="@id/employeesFragment" />
+
+                <LinearLayout
+                    android:id="@+id/notificationsFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/proceduresFragment"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/button">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_bell"
+                        tools:layout_editor_absoluteX="256dp"
+                        tools:layout_editor_absoluteY="114dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notififations"
+                        android:textColor="@color/hint_color"
+                        tools:layout_editor_absoluteX="227dp"
+                        tools:layout_editor_absoluteY="142dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/proceduresFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:orientation="vertical"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/notificationsFragment">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_procedures"
+                        tools:layout_editor_absoluteX="328dp"
+                        tools:layout_editor_absoluteY="116dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/procedures"
+                        android:textColor="@color/hint_color"
+                        tools:layout_editor_absoluteX="304dp"
+                        tools:layout_editor_absoluteY="142dp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         <com.google.android.material.navigation.NavigationView
-            android:id="@+id/side_menu"
-            android:layout_gravity="start"
+            android:id="@+id/nav_view"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
 
-        </com.google.android.material.navigation.NavigationView>
-        
+            android:layout_gravity="start" />
+
+
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
