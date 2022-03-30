@@ -7,4 +7,5 @@
     <color name="bwlcolor">#3AA6DD</color>
     <color name="black_text">#555555</color>
     <color name="hint_color">#C4C4C4</color>
+    <color name="background">#E5E5E5</color>
 </resources>

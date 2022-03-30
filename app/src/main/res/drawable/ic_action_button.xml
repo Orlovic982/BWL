@@ -1,9 +1,15 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="92dp"
-    android:height="92dp"
-    android:viewportWidth="92"
-    android:viewportHeight="92">
-  <path
-      android:pathData="M42,16C27.663,16 16,27.663 16,42C16,56.337 27.663,68 42,68C56.337,68 68,56.337 68,42C68,27.663 56.337,16 42,16ZM53.375,44.1665H44.1665V53.375C44.1665,54.5711 43.1961,55.5415 42,55.5415C40.8039,55.5415 39.8335,54.5711 39.8335,53.375V44.1665H30.625C29.4289,44.1665 28.4585,43.1961 28.4585,42C28.4585,40.8039 29.4289,39.8335 30.625,39.8335H39.8335V30.625C39.8335,29.4289 40.8039,28.4585 42,28.4585C43.1961,28.4585 44.1665,29.4289 44.1665,30.625V39.8335H53.375C54.5711,39.8335 55.5415,40.8039 55.5415,42C55.5415,43.1961 54.5711,44.1665 53.375,44.1665Z"
-      android:fillColor="#3AA6DD"/>
-</vector>
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/background" />
+
+
+        </shape>
+
+    </item>
+
+    <item android:drawable="@drawable/ic_action_button_empty">
+
+    </item>
+</layer-list>

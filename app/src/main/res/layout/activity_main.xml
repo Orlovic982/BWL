@@ -12,174 +12,172 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.main.MainActivity">
+            android:orientation="vertical"
+            tools:context=".ui.main.MainActivity"
+            >
 
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/nav_main_fragment"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
+                android:layout_height="match_parent"
                 app:defaultNavHost="true"
-
                 app:layout_constraintTop_toTopOf="parent"
                 app:navGraph="@navigation/navigation_main" />
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <FrameLayout
                 android:id="@+id/bottomNavigation"
                 android:layout_width="match_parent"
-                android:padding="30dp"
-                android:layout_height="wrap_content" android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+            >
 
 
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="83dp"
-                    android:background="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:background="@drawable/ic_bottom_navigation_background"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom"
+                    android:paddingBottom="17dp"
+                    android:baselineAligned="false">
 
+
+                    <LinearLayout
+
+                        android:id="@+id/homeFragment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:src="@drawable/ic_home"
+                            tools:layout_editor_absoluteX="27dp"
+                            tools:layout_editor_absoluteY="116dp"
+                            android:contentDescription="@string/home" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home"
+                            android:textColor="@color/bwl"
+                            tools:layout_editor_absoluteX="22dp"
+                            tools:layout_editor_absoluteY="142dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/employeesFragment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_employee"
+                            tools:layout_editor_absoluteX="82dp"
+                            tools:layout_editor_absoluteY="116dp"
+                            android:contentDescription="@string/emloyees" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/emloyees"
+                            android:textColor="@color/hint_color"
+                            tools:layout_editor_absoluteX="68dp"
+                            tools:layout_editor_absoluteY="142dp" />
+                    </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/homeFragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/employeesFragment"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintHorizontal_chainStyle="spread_inside"
-                    app:layout_constraintStart_toStartOf="parent">
+                    android:orientation="vertical"/>
 
-                    <ImageView
+                    <LinearLayout
+                        android:id="@+id/notificationsFragment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
 
-                        android:src="@drawable/ic_home"
-                        tools:layout_editor_absoluteX="27dp"
-                        tools:layout_editor_absoluteY="116dp" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_bell"
+                            tools:layout_editor_absoluteX="256dp"
+                            tools:layout_editor_absoluteY="114dp"
+                            android:contentDescription="@string/notififations" />
 
-                    <TextView
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notififations"
+                            android:textColor="@color/hint_color"
+                            tools:layout_editor_absoluteX="227dp"
+                            tools:layout_editor_absoluteY="142dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/proceduresFragment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Home"
-                        android:textColor="@color/bwl"
-                        tools:layout_editor_absoluteX="22dp"
-                        tools:layout_editor_absoluteY="142dp" />
-                </LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="19dp"
+                        tools:ignore="UseCompoundDrawables">
 
-                <LinearLayout
-                    android:id="@+id/employeesFragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
 
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/button"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/homeFragment">
+                            android:src="@drawable/ic_procedures"
+                            tools:layout_editor_absoluteX="328dp"
+                            tools:layout_editor_absoluteY="116dp"
+                            android:contentDescription="@string/procedures" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_employee"
-                        tools:layout_editor_absoluteX="82dp"
-                        tools:layout_editor_absoluteY="116dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/emloyees"
-                        android:textColor="@color/hint_color"
-                        tools:layout_editor_absoluteX="68dp"
-                        tools:layout_editor_absoluteY="142dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/procedures"
+                            android:textColor="@color/hint_color"
+                            tools:layout_editor_absoluteX="304dp"
+                            tools:layout_editor_absoluteY="142dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/button"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
-                    android:background="@drawable/ic_action_button"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/notificationsFragment"
-                    app:layout_constraintStart_toEndOf="@id/employeesFragment" />
-
-                <LinearLayout
-                    android:id="@+id/notificationsFragment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/proceduresFragment"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/button">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_bell"
-                        tools:layout_editor_absoluteX="256dp"
-                        tools:layout_editor_absoluteY="114dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/notififations"
-                        android:textColor="@color/hint_color"
-                        tools:layout_editor_absoluteX="227dp"
-                        tools:layout_editor_absoluteY="142dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/proceduresFragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:gravity="center"
-                    android:orientation="vertical"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/notificationsFragment">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:src="@drawable/ic_procedures"
-                        tools:layout_editor_absoluteX="328dp"
-                        tools:layout_editor_absoluteY="116dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/procedures"
-                        android:textColor="@color/hint_color"
-                        tools:layout_editor_absoluteX="304dp"
-                        tools:layout_editor_absoluteY="142dp" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="31dp"
+                    android:background="@drawable/ic_action_button_empty"
+                    android:contentDescription="@string/action_button" />
+            </FrameLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
 
 
         <com.google.android.material.navigation.NavigationView

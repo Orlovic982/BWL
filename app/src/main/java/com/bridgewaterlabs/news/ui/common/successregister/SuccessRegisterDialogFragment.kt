@@ -21,7 +21,6 @@ class SuccessRegisterDialogFragment : DialogFragment() {
             Intent(requireContext(), MainActivity::class.java).also {
                 startActivity(it)
             }
-
         }
 
         return binding.root
