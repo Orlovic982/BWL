@@ -26,4 +26,9 @@
         android:name="com.bridgewaterlabs.news.ui.main.procedures.ProceduresFragment"
         android:label="fragment_procedures"
         tools:layout="@layout/fragment_procedures" />
+    <fragment
+        android:id="@+id/newsDetails"
+        android:name="com.bridgewaterlabs.news.ui.main.newsdetails.NewsDetails"
+        android:label="NewsDetails"
+        tools:layout="@layout/fragment_news_details"/>
 </navigation>

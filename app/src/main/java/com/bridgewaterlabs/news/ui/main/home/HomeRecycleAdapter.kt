@@ -21,6 +21,8 @@ class HomeRecycleAdapter(var news: List<NewsModel>) : RecyclerView.Adapter<HomeR
             .apply {
                 newsTitle.text = news[position].title
                 newsBody.text = news[position].body
+
+
             }
     }
 

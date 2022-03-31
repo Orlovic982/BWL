@@ -39,4 +39,11 @@
     <string name="procedures">Procedures</string>
     <string name="bwl_news">BWL News</string>
     <string name="action_button">action_button</string>
+    <string name="profile">Profile</string>
+    <string name="favorites">Favorites</string>
+    <string name="privacy_settings">Privacy settings</string>
+    <string name="language">Language</string>
+    <string name="notification_settings">Notification settings</string>
+    <string name="logout">Logout</string>
+
 </resources>

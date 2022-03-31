@@ -1,7 +1,9 @@
 package com.bridgewaterlabs.news.ui.main
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
-    lateinit var bottomNavigationView: BottomNavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +29,17 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_main_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
 
-        val drawerLayout: DrawerLayout = binding.navDrawerMenu
-        val navigationView: NavigationView = binding.navView
-
         binding.navView.setupWithNavController(navController)
+
     }
+
+    fun openCloseNavigationDrawer(view: View) {
+        if (binding.navDrawerMenu.isDrawerOpen(GravityCompat.START)) {
+            binding.navDrawerMenu.closeDrawer(GravityCompat.START)
+        } else {
+            binding.navDrawerMenu.openDrawer(GravityCompat.START)
+        }
+    }
+
+
 }

@@ -31,6 +31,9 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+
+
+
     fun initFakeNews(): List<NewsModel> {
         return mutableListOf(
             NewsModel(
@@ -84,4 +87,7 @@ class HomeFragment : Fragment() {
         binding.recycleView.addItemDecoration(topMargin)
         binding.recycleView.layoutManager = LinearLayoutManager(context)
     }
+
+
+
 }
