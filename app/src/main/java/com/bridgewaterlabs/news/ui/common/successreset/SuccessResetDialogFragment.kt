@@ -18,7 +18,7 @@ class SuccessResetDialogFragment : DialogFragment() {
     ): View? {
         val binding = DialogFragmentSuccesResetBinding.inflate(inflater, container, false)
 
-        binding.btnGonext.setOnClickListener {
+        binding.btnGoNext.setOnClickListener {
             Intent(requireContext(), MainActivity::class.java).also {
                 startActivity(it)
             }

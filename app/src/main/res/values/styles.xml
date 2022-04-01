@@ -19,6 +19,10 @@
         <item name="android:textColor">@color/bwlcolor</item>
     </style>
 
+<style name="Button.Action">
+    <item name="android:drawable">@drawable/ic_action_button_empty</item>
+    <item name="android:gravity">center</item>
 
+</style>
 
 </resources>

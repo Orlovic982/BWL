@@ -10,22 +10,11 @@
         android:id="@+id/homeFragment"
         android:name="com.bridgewaterlabs.news.ui.main.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/employeesFragment"
-        android:name="com.bridgewaterlabs.news.ui.main.EmployeesFragment"
-        android:label="fragment_emplyees"
-        tools:layout="@layout/fragment_emplyees" />
-    <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="com.bridgewaterlabs.news.ui.main.notifications.NotificationsFragment"
-        android:label="fragment_notifications"
-        tools:layout="@layout/fragment_notifications" />
-    <fragment
-        android:id="@+id/proceduresFragment"
-        android:name="com.bridgewaterlabs.news.ui.main.procedures.ProceduresFragment"
-        android:label="fragment_procedures"
-        tools:layout="@layout/fragment_procedures" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newsDetails"
+            app:destination="@id/newsDetails" />
+    </fragment>
     <fragment
         android:id="@+id/newsDetails"
         android:name="com.bridgewaterlabs.news.ui.main.newsdetails.NewsDetails"

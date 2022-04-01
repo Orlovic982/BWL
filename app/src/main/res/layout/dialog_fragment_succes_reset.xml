@@ -33,7 +33,7 @@
         android:textSize="17sp" />
 
     <Button
-        android:id="@+id/btnGonext"
+        android:id="@+id/btnGoNext"
         android:layout_width="263dp"
         android:layout_height="wrap_content"
         android:text="Continue to App"

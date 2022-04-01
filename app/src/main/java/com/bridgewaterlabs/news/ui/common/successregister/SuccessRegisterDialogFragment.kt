@@ -17,7 +17,7 @@ class SuccessRegisterDialogFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = DialogFragmentSuccesRegisterBinding.inflate(inflater, container, false)
-        binding.btnGonext.setOnClickListener {
+        binding.btnGoNext.setOnClickListener {
             Intent(requireContext(), MainActivity::class.java).also {
                 startActivity(it)
             }

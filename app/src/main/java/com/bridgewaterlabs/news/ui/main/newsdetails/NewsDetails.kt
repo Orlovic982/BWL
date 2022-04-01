@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bridgewaterlabs.news.databinding.FragmentNewsDetailsBinding
 
-class NewsDetails:Fragment() {
+class NewsDetails : Fragment() {
 
     lateinit var viewModel: NewsDetailsViewModel
     lateinit var binding: FragmentNewsDetailsBinding
@@ -17,10 +17,8 @@ class NewsDetails:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        binding= FragmentNewsDetailsBinding.inflate(inflater,container,false)
+        binding = FragmentNewsDetailsBinding.inflate(inflater, container, false)
 
         return binding.root
-
     }
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+   >
 
     <data>
 
@@ -19,11 +18,11 @@
             android:padding="28dp">
 
             <ImageView
-                android:id="@+id/btnBack"
+                android:id="@+id/btnSlideMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_menu"
-                android:onClick="openCloseNavigationDrawer"/>
+                android:contentDescription="@string/slide_menu" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -36,26 +35,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Browse through all BWL company news."
+                android:text="@string/browse_through_all_bwl_company_news"
                 android:textSize="15sp" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Search news"
+                android:hint="@string/search_news"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/email_stroke"
                 android:paddingBottom="9dp"
-                android:layout_marginBottom="3dp"/>
+                android:layout_marginBottom="3dp"
+                android:autofillHints=""
+                android:inputType="text" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-
-
-
-
         </LinearLayout>
-
-
-
 </layout>

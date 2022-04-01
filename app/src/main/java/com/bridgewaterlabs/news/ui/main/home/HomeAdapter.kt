@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bridgewaterlabs.news.databinding.ViewNewsBinding
 import com.bridgewaterlabs.news.models.NewsModel
 
-class HomeRecycleAdapter(var news: List<NewsModel>) : RecyclerView.Adapter<HomeRecycleAdapter.NewsViewHolder>() {
+class HomeAdapter(var news: List<NewsModel>) : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
 
     inner class NewsViewHolder(val binding: ViewNewsBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -21,8 +21,6 @@ class HomeRecycleAdapter(var news: List<NewsModel>) : RecyclerView.Adapter<HomeR
             .apply {
                 newsTitle.text = news[position].title
                 newsBody.text = news[position].body
-
-
             }
     }
 
