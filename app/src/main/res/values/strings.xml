@@ -48,5 +48,6 @@
     <string name="slide_menu">Slide menu</string>
     <string name="browse_through_all_bwl_company_news">Browse through all BWL company news.</string>
     <string name="search_news">Search news</string>
+    <string name="news">News</string>
 
 </resources>

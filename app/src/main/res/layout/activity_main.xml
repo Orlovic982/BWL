@@ -44,11 +44,11 @@
                     android:baselineAligned="false"
                     android:gravity="bottom"
                     android:orientation="horizontal"
-                    android:paddingBottom="17dp">
+                    android:paddingBottom="30dp">
 
 
                     <LinearLayout
-
+                        android:layout_marginStart="12dp"
                         android:id="@+id/homeFragment"
                         android:layout_width="45dp"
                         android:layout_height="wrap_content"
@@ -67,12 +67,13 @@
                             tools:layout_editor_absoluteY="116dp" />
 
                         <TextView
+                            android:layout_marginTop="4dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/home"
+                            android:text="@string/news"
                             android:textColor="@color/bwl"
-                            tools:layout_editor_absoluteX="22dp"
-                            tools:layout_editor_absoluteY="142dp" />
+                            android:textSize="12sp"
+                           />
                     </LinearLayout>
 
                     <LinearLayout
@@ -93,14 +94,24 @@
                             tools:layout_editor_absoluteY="116dp" />
 
                         <TextView
+                            android:layout_marginTop="4dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/emloyees"
                             android:textColor="@color/hint_color"
+                            android:textSize="12sp"
                             tools:layout_editor_absoluteX="68dp"
                             tools:layout_editor_absoluteY="142dp" />
                     </LinearLayout>
 
+
+                <LinearLayout
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables"/>
 
                     <LinearLayout
                         android:id="@+id/notificationsFragment"
@@ -120,6 +131,8 @@
                             tools:layout_editor_absoluteY="114dp" />
 
                         <TextView
+                            android:layout_marginTop="4dp"
+                            android:textSize="12sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/notififations"
@@ -130,9 +143,9 @@
 
                     <LinearLayout
                         android:id="@+id/proceduresFragment"
+                        android:layout_marginEnd="12dp"
                         android:layout_width="45dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="19dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
@@ -148,9 +161,11 @@
                             tools:layout_editor_absoluteY="116dp" />
 
                         <TextView
+                            android:layout_marginTop="4dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/procedures"
+                            android:textSize="12sp"
                             android:textColor="@color/hint_color"
                             tools:layout_editor_absoluteX="304dp"
                             tools:layout_editor_absoluteY="142dp" />
@@ -167,7 +182,8 @@
                         android:layout_width="52dp"
                         android:layout_height="52dp"
                         android:src="@drawable/ellipse_action_button"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/action_button" />
 
                     <Button
                         android:layout_gravity="center"
@@ -201,7 +217,8 @@
                 android:layout_gravity="bottom"
                 android:layout_marginStart="28dp"
                 android:layout_marginBottom="30dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="wrap_content"

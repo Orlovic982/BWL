@@ -44,36 +44,32 @@ class HomeFragment : Fragment() {
         return mutableListOf(
             NewsModel(
                 "Title 1",
-                R.string.lorem_ipsum.toString()
-            ),
+                getString(R.string.lorem_ipsum)            ),
             NewsModel(
                 "Title 2",
-                R.string.lorem_ipsum.toString()
-            ),
+                getString(R.string.lorem_ipsum)            ),
             NewsModel(
                 "Title 3",
-                R.string.lorem_ipsum.toString()
-            ),
+
+                getString(R.string.lorem_ipsum)            ),
             NewsModel(
                 "Title 4",
-                R.string.lorem_ipsum.toString()
-            ),
+
+                getString(R.string.lorem_ipsum)            ),
             NewsModel(
                 "Title 5",
-                R.string.lorem_ipsum.toString()
-            ),
+
+                getString(R.string.lorem_ipsum)            ),
             NewsModel(
                 "Title 6",
-                R.string.lorem_ipsum.toString()
-            ),
+
+                getString(R.string.lorem_ipsum)            ),
             NewsModel(
                 "Title 6",
-                R.string.lorem_ipsum.toString()
-            ),
+                getString(R.string.lorem_ipsum)         ),
             NewsModel(
                 "Title 7",
-                R.string.lorem_ipsum.toString()
-            ),
+                getString(R.string.lorem_ipsum)            ),
 
         )
     }
