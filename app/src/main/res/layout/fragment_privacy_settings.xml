@@ -7,10 +7,11 @@
     </data>
 
     <LinearLayout
+      android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.main.procedures.ProceduresFragment"
-        android:orientation="vertical">
+        tools:context=".ui.main.privacysettings.PrivacySettingsFragment">
+
 
         <ImageView
             android:id="@+id/ivBack"
@@ -21,11 +22,10 @@
             android:src="@drawable/ic_arrow" />
 
         <TextView
-            android:layout_marginTop="30dp"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Procedures" />
+            android:text="@string/hello_blank_fragment" />
 
     </LinearLayout>
 </layout>

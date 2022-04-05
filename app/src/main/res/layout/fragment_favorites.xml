@@ -7,10 +7,10 @@
     </data>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.main.procedures.ProceduresFragment"
-        android:orientation="vertical">
+        tools:context=".ui.main.favorites.FavoritesFragment">
 
         <ImageView
             android:id="@+id/ivBack"
@@ -20,12 +20,13 @@
             android:contentDescription="@string/arrow_back_button"
             android:src="@drawable/ic_arrow" />
 
+
         <TextView
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Procedures" />
+            android:text="Favorites fragment" />
 
     </LinearLayout>
 </layout>

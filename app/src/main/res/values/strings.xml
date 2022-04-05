@@ -49,5 +49,10 @@
     <string name="browse_through_all_bwl_company_news">Browse through all BWL company news.</string>
     <string name="search_news">Search news</string>
     <string name="news">News</string>
+    <string name="user_picture">User picture</string>
+    <string name="heart_colored">Heart colored</string>
+    <string name="privacy_settings_icon">Privacy settings icon</string>
+    <string name="language_icon">Language icon</string>
+    <string name="notification_icon_colored">Notification icon colored</string>
 
 </resources>

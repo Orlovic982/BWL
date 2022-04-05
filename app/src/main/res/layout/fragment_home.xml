@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-   >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,6 +9,11 @@
             type="com.bridgewaterlabs.news.ui.main.home.HomeViewModel" />
     </data>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.main.MainActivity">
 
 
         <LinearLayout
@@ -21,8 +26,8 @@
                 android:id="@+id/btnSlideMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_menu"
-                android:contentDescription="@string/slide_menu" />
+                android:contentDescription="@string/slide_menu"
+                android:src="@drawable/ic_menu" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -31,25 +36,196 @@
                 android:text="@string/bwl_news"
                 android:textSize="33sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/browse_through_all_bwl_company_news"
                 android:textSize="15sp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/search_news"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/email_stroke"
-                android:paddingBottom="9dp"
                 android:layout_marginBottom="3dp"
                 android:autofillHints=""
-                android:inputType="text" />
+                android:background="@drawable/email_stroke"
+                android:hint="@string/search_news"
+                android:inputType="text"
+                android:paddingBottom="9dp" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/ic_bottom_navigation_background"
+                android:baselineAligned="false"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingBottom="30dp">
+
+
+                <LinearLayout
+                    android:id="@+id/nav_home"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:contentDescription="@string/home"
+                        android:src="@drawable/ic_home"
+                        tools:layout_editor_absoluteX="27dp"
+                        tools:layout_editor_absoluteY="116dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/news"
+                        android:textColor="@color/bwl"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/nav_employees"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/emloyees"
+                        android:src="@drawable/ic_employee"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="116dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/emloyees"
+                        android:textColor="@color/hint_color"
+                        android:textSize="12sp"
+                        tools:layout_editor_absoluteX="68dp"
+                        tools:layout_editor_absoluteY="142dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables" />
+
+                <LinearLayout
+                    android:id="@+id/nav_notification"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/notififations"
+                        android:src="@drawable/ic_bell"
+                        tools:layout_editor_absoluteX="256dp"
+                        tools:layout_editor_absoluteY="114dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/notififations"
+                        android:textColor="@color/hint_color"
+                        android:textSize="12sp"
+                        tools:layout_editor_absoluteX="227dp"
+                        tools:layout_editor_absoluteY="142dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/nav_procedures"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:contentDescription="@string/procedures"
+                        android:src="@drawable/ic_procedures"
+                        tools:layout_editor_absoluteX="328dp"
+                        tools:layout_editor_absoluteY="116dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/procedures"
+                        android:textColor="@color/hint_color"
+                        android:textSize="12sp"
+                        tools:layout_editor_absoluteX="304dp"
+                        tools:layout_editor_absoluteY="142dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="31dp">
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/action_button"
+                    android:src="@drawable/ellipse_action_button" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="3dp"
+                    android:background="@drawable/ic_action_button_empty"
+                    android:contentDescription="@string/action_button" />
+
+            </FrameLayout>
+        </FrameLayout>
+    </FrameLayout>
 </layout>

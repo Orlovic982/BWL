@@ -9,8 +9,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.main.procedures.ProceduresFragment"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="28dp"
+        tools:context=".ui.main.myprofile.MyProfileFragment">
+
 
         <ImageView
             android:id="@+id/ivBack"
@@ -21,11 +23,10 @@
             android:src="@drawable/ic_arrow" />
 
         <TextView
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Procedures" />
+            android:layout_gravity="center"
+            android:text="@string/hello_blank_fragment" />
 
     </LinearLayout>
 </layout>

@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bridgewaterlabs.news.R
+import com.bridgewaterlabs.news.databinding.FragmentProceduresBinding
 
 class ProceduresFragment : Fragment() {
+
+    lateinit var binding: FragmentProceduresBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -15,6 +17,10 @@ class ProceduresFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_procedures, container, false)
+
+        binding = FragmentProceduresBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        return binding.root
     }
 }

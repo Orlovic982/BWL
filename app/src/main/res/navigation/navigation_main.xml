@@ -14,10 +14,68 @@
         <action
             android:id="@+id/action_homeFragment_to_newsDetails"
             app:destination="@id/newsDetails" />
+        <action
+            android:id="@+id/action_homeFragment_to_employeesFragment2"
+            app:destination="@id/nav_employees" />
+        <action
+            android:id="@+id/action_homeFragment_to_proceduresFragment3"
+            app:destination="@id/proceduresFragment3" />
+        <action
+            android:id="@+id/action_homeFragment_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationSettingsFragment"
+            app:destination="@id/notificationSettingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_privacySettingsFragment2"
+            app:destination="@id/privacySettingsFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/newsDetails"
         android:name="com.bridgewaterlabs.news.ui.main.newsdetails.NewsDetails"
         android:label="NewsDetails"
         tools:layout="@layout/fragment_news_details"/>
+    <fragment
+        android:id="@+id/nav_employees"
+        android:name="com.bridgewaterlabs.news.ui.main.EmployeesFragment"
+        android:label="fragment_procedures"
+        tools:layout="@layout/fragment_procedures" />
+    <fragment
+        android:id="@+id/proceduresFragment3"
+        android:name="com.bridgewaterlabs.news.ui.main.procedures.ProceduresFragment"
+        android:label="fragment_procedures"
+        tools:layout="@layout/fragment_procedures" />
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.bridgewaterlabs.news.ui.main.myprofile.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" />
+    <fragment
+        android:id="@+id/notificationSettingsFragment"
+        android:name="com.bridgewaterlabs.news.ui.main.notificationsettings.NotificationSettingsFragment"
+        android:label="NotificationSettingsFragment"
+        tools:layout="@layout/fragment_notification_settings"/>
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.bridgewaterlabs.news.ui.main.language.LanguageFragment"
+        android:label="LanguageFragment"
+        tools:layout="@layout/fragment_language"/>
+    <fragment
+        android:id="@+id/privacySettingsFragment2"
+        android:name="com.bridgewaterlabs.news.ui.main.privacysettings.PrivacySettingsFragment"
+        android:label="PrivacySettingsFragment"
+        tools:layout="@layout/fragment_privacy_settings"/>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.bridgewaterlabs.news.ui.main.favorites.FavoritesFragment"
+        android:label="FavoritesFragment"
+        tools:layout="@layout/fragment_favorites"/>
+
+
 </navigation>
