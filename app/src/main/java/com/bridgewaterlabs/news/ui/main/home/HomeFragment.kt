@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bridgewaterlabs.news.R
 import com.bridgewaterlabs.news.databinding.FragmentHomeBinding
@@ -12,7 +14,7 @@ import com.bridgewaterlabs.news.models.NewsModel
 import com.bridgewaterlabs.news.ui.main.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(),HomeAdapter.newsListener {
 
     lateinit var binding: FragmentHomeBinding
     private val viewmodel: HomeViewModel by viewModel()
@@ -40,7 +42,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun initFakeNews(): List<NewsModel> {
+     fun initFakeNews(): List<NewsModel> {
         return mutableListOf(
             NewsModel(
                 "Title 1",
@@ -75,10 +77,22 @@ class HomeFragment : Fragment() {
     }
 
     private fun bindAdapter() {
-        val adapter = HomeAdapter(initFakeNews())
+        val adapter = HomeAdapter(initFakeNews(),this)
         binding.recycleView.adapter = adapter
         val topMargin = AdapterDecoration(30)
         binding.recycleView.addItemDecoration(topMargin)
         binding.recycleView.layoutManager = LinearLayoutManager(context)
+    }
+
+    override fun favoritesAdd(position: Int) {
+        Toast.makeText(context, "You add position: $position", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun favoritesRemove(position: Int) {
+        Toast.makeText(context, "You remove position: $position", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun openNwsDetail(position: Int) {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToNewsDetails())
     }
 }

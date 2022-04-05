@@ -49,6 +49,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
+                    android:id="@+id/cb_favorites"
                     android:layout_width="15dp"
                     android:layout_height="13dp"
                     android:button="@drawable/ic_favorites"
@@ -89,6 +90,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/et_link_news"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
