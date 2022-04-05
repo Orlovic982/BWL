@@ -63,7 +63,7 @@ class RegisterFragment : BaseFragment() {
 
     fun setHyperLink(spannableString: SpannableString, text: String, url: String) {
         val span = setClickableSpan(url)
-        spannableString?.setSpan(
+        spannableString.setSpan(
             span,
             spannableString.indexOf(text),
             spannableString.indexOf(text) + text.length,

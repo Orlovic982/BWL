@@ -31,4 +31,28 @@
     <string name="i_agree_withterms_and_conditions_an_privacy_policy">I agree with %1$s and %2$s </string>
     <string name="terms_and_conditions">Terms and Conditions</string>
     <string name="privacy_policy">Privacy policy</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="emloyees">Emloyees</string>
+    <string name="notififations">Notififations</string>
+    <string name="procedures">Procedures</string>
+    <string name="bwl_news">BWL News</string>
+    <string name="action_button">action_button</string>
+    <string name="profile">Profile</string>
+    <string name="favorites">Favorites</string>
+    <string name="privacy_settings">Privacy settings</string>
+    <string name="language">Language</string>
+    <string name="notification_settings">Notification settings</string>
+    <string name="logout">Logout</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="slide_menu">Slide menu</string>
+    <string name="browse_through_all_bwl_company_news">Browse through all BWL company news.</string>
+    <string name="search_news">Search news</string>
+    <string name="news">News</string>
+    <string name="user_picture">User picture</string>
+    <string name="heart_colored">Heart colored</string>
+    <string name="privacy_settings_icon">Privacy settings icon</string>
+    <string name="language_icon">Language icon</string>
+    <string name="notification_icon_colored">Notification icon colored</string>
+
 </resources>

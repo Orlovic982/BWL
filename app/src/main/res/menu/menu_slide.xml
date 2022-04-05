@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+    <group android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_user"
+            android:title="@string/profile"
+            android:iconTint="@color/bwl"/>
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/ic_heart_colored"
+            android:title="@string/favorites" />
+        <item
+            android:id="@+id/nav_privacy_settings"
+            android:icon="@drawable/ic_privacy_settings"
+            android:title="@string/privacy_settings" />
+        <item
+            android:id="@+id/nav_language"
+            android:icon="@drawable/ic_language"
+            android:title="@string/language" />
+        <item
+            android:id="@+id/nav_notification_settings"
+            android:icon="@drawable/ic_bell_colored"
+            android:title="@string/notification_settings" />
+    </group>
+
+
+</menu>
