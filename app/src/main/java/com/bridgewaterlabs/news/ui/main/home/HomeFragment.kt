@@ -93,6 +93,6 @@ class HomeFragment : Fragment(),HomeAdapter.newsListener {
     }
 
     override fun openNwsDetail(position: Int) {
-        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToNewsDetails())
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToNewsDetails(position))
     }
 }

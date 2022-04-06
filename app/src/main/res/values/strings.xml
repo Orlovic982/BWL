@@ -54,5 +54,10 @@
     <string name="privacy_settings_icon">Privacy settings icon</string>
     <string name="language_icon">Language icon</string>
     <string name="notification_icon_colored">Notification icon colored</string>
+    <string name="blog_image">Blog image</string>
+    <string name="ellipse">Ellipse</string>
+    <string name="title">Title</string>
+    <string name="some_text">Some text...</string>
+    <string name="show_more">Show more</string>
 
 </resources>
