@@ -29,10 +29,7 @@ class HomeAdapter(var news: List<NewsModel>, private val listener: newsListener)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         return NewsViewHolder(
-            ViewNewsBinding.inflate(LayoutInflater.
-            from(parent.context),
-                parent,
-                false),
+            ViewNewsBinding.inflate(LayoutInflater.from(parent.context),parent,  false),
             listener
         )
     }
