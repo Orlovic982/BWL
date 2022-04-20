@@ -24,12 +24,11 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         val navHost = supportFragmentManager.findFragmentById(R.id.nav_main_fragment) as
-                NavHostFragment
+            NavHostFragment
         navController = navHost.findNavController()
         binding.navView.setupWithNavController(navController)
 
         setupSlideMenuNavigation()
-
     }
 
     fun openCloseNavigationDrawer(view: View) {
@@ -41,31 +40,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupSlideMenuNavigation() {
-
-
-        binding.navFavorites.setOnClickListener(){
+        binding.navFavorites.setOnClickListener() {
             navController.navigate(HomeFragmentDirections.actionHomeFragmentToFavoritesFragment())
             binding.navDrawerMenu.closeDrawer(GravityCompat.START)
         }
-        binding.navLanguage.setOnClickListener(){
+        binding.navLanguage.setOnClickListener() {
             navController.navigate(HomeFragmentDirections.actionHomeFragmentToLanguageFragment())
             binding.navDrawerMenu.closeDrawer(GravityCompat.START)
         }
-        binding.navMyProfile.setOnClickListener(){
+        binding.navMyProfile.setOnClickListener() {
             navController.navigate(HomeFragmentDirections.actionHomeFragmentToMyProfileFragment())
             binding.navDrawerMenu.closeDrawer(GravityCompat.START)
         }
 
-        binding.navPrivacySettings.setOnClickListener(){
-            navController.navigate(HomeFragmentDirections.actionHomeFragmentToPrivacySettingsFragment2())
+        binding.navPrivacySettings.setOnClickListener() {
+            navController.navigate(
+                HomeFragmentDirections.actionHomeFragmentToPrivacySettingsFragment2()
+            )
             binding.navDrawerMenu.closeDrawer(GravityCompat.START)
         }
-        binding.navNotificationSettings.setOnClickListener(){
-            navController.navigate(HomeFragmentDirections.actionHomeFragmentToNotificationSettingsFragment())
+        binding.navNotificationSettings.setOnClickListener() {
+            navController.navigate(
+                HomeFragmentDirections.actionHomeFragmentToNotificationSettingsFragment()
+            )
             binding.navDrawerMenu.closeDrawer(GravityCompat.START)
         }
-
-
     }
-
 }
