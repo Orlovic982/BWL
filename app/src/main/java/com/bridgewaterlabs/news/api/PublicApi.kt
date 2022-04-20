@@ -29,6 +29,8 @@ interface PublicApi {
     @GET("news/{number}")
     fun getNewsDetails(
         @Path("number")
-        number: Int
-    ): Flowable<NewsResponse>
+        number: Int,
+        @Header("Authorization")
+        authorization: String = "Bearer 45|BBYeNe9zQReDhxegYdTMCUFQjwKoEME3vIxORbMS",
+  ): Flowable<NewsResponse>
 }

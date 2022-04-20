@@ -31,10 +31,8 @@ class HomeFragment : Fragment(), HomeAdapter.newsListener {
         binding.lifecycleOwner = viewLifecycleOwner
 
         bindAdapter()
-        // bingSlideMenu()
-        binding.btnSlideMenu.setOnClickListener() {
-            viewmodel.getProfile()
-        }
+        bingSlideMenu()
+
 
         return binding.root
     }

@@ -6,6 +6,6 @@ import io.reactivex.rxjava3.core.Flowable
 
 class NewsRepository {
     fun getNewsdetails(number: Int): Flowable<NewsResponse> {
-        return RetrofitInstance.getPublicApi().getNewsDetails(number)
+        return RetrofitInstance.getPublicApi().getNewsDetails(number+1)
     }
 }
