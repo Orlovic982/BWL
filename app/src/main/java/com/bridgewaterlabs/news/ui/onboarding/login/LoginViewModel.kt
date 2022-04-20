@@ -3,16 +3,16 @@ package com.bridgewaterlabs.news.ui.onboarding.login
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bridgewaterlabs.news.api.PublicApi
 import com.bridgewaterlabs.news.repositories.AuthRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
-class LoginViewModel(private val authRepository: AuthRepository, private val publicApi: PublicApi) :
-    ViewModel() {
-
+class LoginViewModel() : ViewModel() {
     val email = MutableLiveData<String>("")
     val password = MutableLiveData<String>("")
+    val successLogin = MutableLiveData<Boolean>(false)
+    val failureLogin = MutableLiveData<Boolean>(false)
+    private val authRepository = AuthRepository()
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -21,21 +21,23 @@ class LoginViewModel(private val authRepository: AuthRepository, private val pub
         compositeDisposable.dispose()
     }
 
-    fun login() {
+    fun login(email: String, password: String) {
         val flow = authRepository
-            .loginApiCall(email.toString(), password.toString())
+            .login(email, password)
             .observeOn(AndroidSchedulers.mainThread())
 
         val disposable = flow.subscribe(
             {
-                Log.d("Milan", "Logova si sledece podatke $email i $password i dobio token:${it.access_token}")
-
+                Log.d(
+                    "Milan",
+                    "Logovao si sledece podatke $email i {$password i dobio token:${it.access_token}"
+                )
+                successLogin.value = true
             },
             {
-
+                failureLogin.value = true
             },
         )
         compositeDisposable.add(disposable)
     }
-
 }

@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bridgewaterlabs.news.databinding.ViewNewsBinding
-import com.bridgewaterlabs.news.models.NewsModel
+import com.bridgewaterlabs.news.model.NewsModel
 
 class HomeAdapter(var news: List<NewsModel>, private val listener: newsListener) :
     RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
-
 
     inner class NewsViewHolder(val binding: ViewNewsBinding, listener: newsListener) :
         RecyclerView.ViewHolder(binding.root) {
@@ -24,12 +23,11 @@ class HomeAdapter(var news: List<NewsModel>, private val listener: newsListener)
                 listener.openNwsDetail(adapterPosition)
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         return NewsViewHolder(
-            ViewNewsBinding.inflate(LayoutInflater.from(parent.context),parent,  false),
+            ViewNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false),
             listener
         )
     }
