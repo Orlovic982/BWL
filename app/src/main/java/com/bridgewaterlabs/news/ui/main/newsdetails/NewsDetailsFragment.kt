@@ -29,15 +29,15 @@ class NewsDetailsFragment : Fragment() {
         Toast.makeText(context, "you passed number ${args.position} here ", Toast.LENGTH_SHORT)
             .show()
 
-        initNews(args.position)
+//        initNews(args.position)
         bindingBackButton()
 
         return binding.root
     }
 
-    fun initNews(position: Int) {
-        viewModel.getNewsDetails(position)
-    }
+//    fun initNews(position: Int) {
+//        viewModel.getNewsDetails(position)
+//    }
 
     fun bindingBackButton() {
         binding.ivBack.setOnClickListener() {
@@ -45,9 +45,9 @@ class NewsDetailsFragment : Fragment() {
         }
     }
 
-    fun initfakeNews(position: Int): NewsModel {
-        val models = HomeFragment()
-        val list: List<NewsModel> = models.initFakeNews()
-        return list[position]
-    }
+//    fun initfakeNews(position: Int): NewsModel {
+//        val models = HomeFragment()
+//        val list: List<NewsModel> = models.initFakeNews()
+//        return list[position]
+//    }
 }

@@ -1,5 +1,7 @@
 package com.bridgewaterlabs.news.di
 
+import com.bridgewaterlabs.news.preferences.AuthPreferences
+import com.bridgewaterlabs.news.repositories.AuthRepository
 import com.bridgewaterlabs.news.ui.main.home.HomeViewModel
 import com.bridgewaterlabs.news.ui.main.newsdetails.NewsDetailsViewModel
 import com.bridgewaterlabs.news.ui.onboarding.forgotpassword.ForgotPasswordViewModel
@@ -13,7 +15,8 @@ val viewModelModule = module {
     viewModel { ForgotPasswordViewModel() }
     viewModel { RegisterViewModel() }
     viewModel { ResetPasswordViewModel() }
-    viewModel { HomeViewModel() }
-    viewModel { LoginViewModel() }
+    viewModel { HomeViewModel(get(),get()) }
+    viewModel { LoginViewModel(get(),get()) }
     viewModel { NewsDetailsViewModel() }
+
 }

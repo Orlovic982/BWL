@@ -4,5 +4,6 @@ import com.bridgewaterlabs.news.repositories.AuthRepository
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    single { AuthRepository() }
+    single { AuthRepository(get()) }
+
 }

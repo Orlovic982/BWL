@@ -1,18 +1,21 @@
 package com.bridgewaterlabs.news.ui.onboarding.login
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bridgewaterlabs.news.preferences.AuthPreferences
 import com.bridgewaterlabs.news.repositories.AuthRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import retrofit2.HttpException
 
-class LoginViewModel() : ViewModel() {
+class LoginViewModel(
+    private val preferences: AuthPreferences,
+    private val authRepository: AuthRepository
+) : ViewModel() {
     val email = MutableLiveData<String>("")
     val password = MutableLiveData<String>("")
-    val successLogin = MutableLiveData<Boolean>(false)
-    val failureLogin = MutableLiveData<Boolean>(false)
-    private val authRepository = AuthRepository()
+    val errorLogin = MutableLiveData<String>()
+      val loginState = MutableLiveData<LoginState>()
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -21,6 +24,7 @@ class LoginViewModel() : ViewModel() {
         compositeDisposable.dispose()
     }
 
+
     fun login(email: String, password: String) {
         val flow = authRepository
             .login(email, password)
@@ -28,16 +32,15 @@ class LoginViewModel() : ViewModel() {
 
         val disposable = flow.subscribe(
             {
-                Log.d(
-                    "Milan",
-                    "Logovao si sledece podatke $email i {$password i dobio token:${it.access_token}"
-                )
-                successLogin.value = true
+                loginState.value = LoginState.Success
             },
             {
-                failureLogin.value = true
-            },
-        )
-        compositeDisposable.add(disposable)
-    }
+                val error = ErrorLogin(it)
+                errorLogin.value=error.message
+
+            }
+
+    )
+    compositeDisposable.add(disposable)
+}
 }

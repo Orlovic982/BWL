@@ -13,9 +13,11 @@ import com.bridgewaterlabs.news.ui.common.BaseFragment
 import com.bridgewaterlabs.news.ui.main.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginFragment : BaseFragment() {
+class LoginFragment() : BaseFragment() {
+
     private lateinit var binding: FragmentLoginBinding
     private val viewModel: LoginViewModel by viewModel()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,30 +34,32 @@ class LoginFragment : BaseFragment() {
         return binding.root
     }
 
+
     fun setupLogin() {
         binding.btnLogin.setOnClickListener() {
             viewModel.login(viewModel.email.value.toString(), viewModel.password.value.toString())
         }
 
-        viewModel.successLogin.observe(
+        viewModel.loginState.observe(
             viewLifecycleOwner,
             Observer {
-                if (it == true) {
-                    Toast.makeText(context, "Welcome", Toast.LENGTH_SHORT).show()
-                    Intent(requireContext(), MainActivity::class.java).also {
-                        startActivity(it)
-                    }
+                when(it){
+                    is LoginState.Success->navigateHome()
+                    is LoginState.Error->Toast.makeText(context,"Neces moci ove noci, probaj ponovo",Toast.LENGTH_SHORT).show()
                 }
             }
         )
-        viewModel.failureLogin.observe(
+
+
+        viewModel.errorLogin.observe(
             viewLifecycleOwner,
             Observer {
-                if (it == true) {
-                    Toast.makeText(context, "Email or password are not valid", Toast.LENGTH_SHORT).show()
+
+                    Toast.makeText(context, "Email or password are not valid", Toast.LENGTH_SHORT)
+                        .show()
                     viewModel.email.value = ""
                     viewModel.password.value = ""
-                }
+
             }
         )
     }
@@ -69,6 +73,11 @@ class LoginFragment : BaseFragment() {
         binding.btnRegister.setOnClickListener() {
             val action = LoginFragmentDirections.actionLoginToRegisterFragment()
             findNavController().navigate(action)
+        }
+    }
+    fun navigateHome() {
+        Intent(requireContext(), MainActivity::class.java).also {
+            startActivity(it)
         }
     }
 }

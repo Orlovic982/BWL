@@ -2,19 +2,22 @@ package com.bridgewaterlabs.news.ui.main.home
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.bridgewaterlabs.news.preferences.AuthPreferences
 import com.bridgewaterlabs.news.repositories.AuthRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
-class HomeViewModel() : ViewModel() {
+class HomeViewModel(
+    private val preferences: AuthPreferences,
+    private val authRepository : AuthRepository) : ViewModel() {
 
-    private val authRepository = AuthRepository()
     private val compositeDisposable = CompositeDisposable()
 
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.dispose()
     }
+
 
     fun getProfile() {
         val flow = authRepository.getProfile()
