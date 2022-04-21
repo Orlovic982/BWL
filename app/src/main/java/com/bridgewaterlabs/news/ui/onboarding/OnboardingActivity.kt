@@ -16,7 +16,6 @@ class OnboardingActivity : BaseActivity() {
         setupBinding()
 
         preferences = getSharedPreferences("myPref", MODE_PRIVATE)
-
     }
 
     private fun setupBinding() {

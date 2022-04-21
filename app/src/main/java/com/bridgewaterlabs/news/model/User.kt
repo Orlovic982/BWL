@@ -13,4 +13,3 @@ data class User(
     val last_name: String?,
     val updated_at: String?
 )
-

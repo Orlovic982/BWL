@@ -10,6 +10,6 @@ class NewsRepository(
 ) {
     fun getNewsdetails(number: Int): Flowable<NewsResponse> {
         authPreferences.token
-        return RetrofitInstance.getPublicApi().getNewsDetails(number+1)
+        return RetrofitInstance.getPublicApi().getNewsDetails(number + 1)
     }
 }

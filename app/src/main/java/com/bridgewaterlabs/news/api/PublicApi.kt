@@ -17,7 +17,8 @@ interface PublicApi {
 
     @GET("my-profile")
     fun getmyProfile(
-        @Header("Authorization") authorization: String = "Bearer 45|BBYeNe9zQReDhxegYdTMCUFQjwKoEME3vIxORbMS"
+        @Header("Authorization")
+        authorization: String = "Bearer 45|BBYeNe9zQReDhxegYdTMCUFQjwKoEME3vIxORbMS"
     ): Flowable<User>
 
     @POST("register")
@@ -32,5 +33,5 @@ interface PublicApi {
         number: Int,
         @Header("Authorization")
         authorization: String = "Bearer 45|BBYeNe9zQReDhxegYdTMCUFQjwKoEME3vIxORbMS",
-  ): Flowable<NewsResponse>
+    ): Flowable<NewsResponse>
 }

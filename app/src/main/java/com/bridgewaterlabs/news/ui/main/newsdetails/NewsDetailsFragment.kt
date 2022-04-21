@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bridgewaterlabs.news.databinding.FragmentNewsDetailsBinding
-import com.bridgewaterlabs.news.model.NewsModel
-import com.bridgewaterlabs.news.ui.main.home.HomeFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NewsDetailsFragment : Fragment() {

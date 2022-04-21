@@ -1,10 +1,6 @@
 package com.bridgewaterlabs.news.preferences
 
 import android.content.SharedPreferences
-import android.util.Log
-import com.bridgewaterlabs.news.model.User
-import com.bridgewaterlabs.news.ui.common.BaseActivity
-import java.util.prefs.Preferences
 
 private const val KEY_TOKEN = "token"
 private const val KEY_REFRESH_TOKEN = "refresh_token"
@@ -18,13 +14,13 @@ private const val KEY_IMAGE_URL = "image_url"
 private const val KEY_LAST_NAME = "last_name"
 private const val KEY_UPDATE_AT = "updated_at"
 
- class AuthPreferences(
-     private val preferences: SharedPreferences,
- ) {
+class AuthPreferences(
+    private val preferences: SharedPreferences,
+) {
 
     var token
         get() = preferences.getString(KEY_TOKEN, null)
-        set(value) { preferences.edit().putString(KEY_TOKEN, value).apply()}
+        set(value) { preferences.edit().putString(KEY_TOKEN, value).apply() }
 
     var refreshToken
         get() = preferences.getString(KEY_REFRESH_TOKEN, null)
@@ -44,5 +40,4 @@ private const val KEY_UPDATE_AT = "updated_at"
 //        }
 //        set(value) {}
 //
-
 }

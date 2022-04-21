@@ -23,5 +23,4 @@ val preferencesModule = module {
     single {
         AuthPreferences(get(named(SHARED_PREFERENCES_ENCRYPTED)))
     }
-
 }

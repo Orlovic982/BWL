@@ -18,7 +18,6 @@ class LoginFragment() : BaseFragment() {
     private lateinit var binding: FragmentLoginBinding
     private val viewModel: LoginViewModel by viewModel()
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,7 +33,6 @@ class LoginFragment() : BaseFragment() {
         return binding.root
     }
 
-
     fun setupLogin() {
         binding.btnLogin.setOnClickListener() {
             viewModel.login(viewModel.email.value.toString(), viewModel.password.value.toString())
@@ -43,23 +41,24 @@ class LoginFragment() : BaseFragment() {
         viewModel.loginState.observe(
             viewLifecycleOwner,
             Observer {
-                when(it){
-                    is LoginState.Success->navigateHome()
-                    is LoginState.Error->Toast.makeText(context,"Neces moci ove noci, probaj ponovo",Toast.LENGTH_SHORT).show()
+                when (it) {
+                    is LoginState.Success -> navigateHome()
+                    is LoginState.Error -> Toast.makeText(
+                        context,
+                        "Neces moci ove noci, probaj ponovo",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         )
 
-
         viewModel.errorLogin.observe(
             viewLifecycleOwner,
             Observer {
-
-                    Toast.makeText(context, "Email or password are not valid", Toast.LENGTH_SHORT)
-                        .show()
-                    viewModel.email.value = ""
-                    viewModel.password.value = ""
-
+                Toast.makeText(context, "Email or password are not valid", Toast.LENGTH_SHORT)
+                    .show()
+                viewModel.email.value = ""
+                viewModel.password.value = ""
             }
         )
     }

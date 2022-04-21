@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bridgewaterlabs.news.R
 import com.bridgewaterlabs.news.databinding.FragmentHomeBinding
 import com.bridgewaterlabs.news.model.NewsModel
-import com.bridgewaterlabs.news.preferences.AuthPreferences
 import com.bridgewaterlabs.news.ui.main.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -33,7 +32,6 @@ class HomeFragment() : Fragment(), HomeAdapter.newsListener {
 
         bindAdapter()
         bingSlideMenu()
-
 
         return binding.root
     }

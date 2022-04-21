@@ -6,7 +6,6 @@ import com.bridgewaterlabs.news.preferences.AuthPreferences
 import com.bridgewaterlabs.news.repositories.AuthRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import retrofit2.HttpException
 
 class LoginViewModel(
     private val preferences: AuthPreferences,
@@ -15,7 +14,7 @@ class LoginViewModel(
     val email = MutableLiveData<String>("")
     val password = MutableLiveData<String>("")
     val errorLogin = MutableLiveData<String>()
-      val loginState = MutableLiveData<LoginState>()
+    val loginState = MutableLiveData<LoginState>()
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -23,7 +22,6 @@ class LoginViewModel(
         super.onCleared()
         compositeDisposable.dispose()
     }
-
 
     fun login(email: String, password: String) {
         val flow = authRepository
@@ -36,11 +34,10 @@ class LoginViewModel(
             },
             {
                 val error = ErrorLogin(it)
-                errorLogin.value=error.message
-
+                errorLogin.value = error.message
             }
 
-    )
-    compositeDisposable.add(disposable)
-}
+        )
+        compositeDisposable.add(disposable)
+    }
 }

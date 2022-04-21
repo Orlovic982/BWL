@@ -13,7 +13,6 @@ class AuthRepository(
 ) {
 
     fun login(email: String, password: String): Flowable<Auth> {
-
         return RetrofitInstance.getPublicApi().login(
             LoginRequset(email = email, password = password)
         ).observeOn(AndroidSchedulers.mainThread()).doOnNext {

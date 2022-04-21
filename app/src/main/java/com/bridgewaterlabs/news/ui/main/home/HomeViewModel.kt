@@ -9,7 +9,8 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 class HomeViewModel(
     private val preferences: AuthPreferences,
-    private val authRepository : AuthRepository) : ViewModel() {
+    private val authRepository: AuthRepository
+) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -17,7 +18,6 @@ class HomeViewModel(
         super.onCleared()
         compositeDisposable.dispose()
     }
-
 
     fun getProfile() {
         val flow = authRepository.getProfile()
@@ -35,7 +35,7 @@ class HomeViewModel(
             {
                 Log.d(
                     "Milan",
-                    "\n Odgovor: \n ${it.message} + ${it.cause} + ${it.stackTrace} + ${it.localizedMessage}"
+                    "\n Odgovor: \n ${it.message} + ${it.cause} "
                 )
             }
         )

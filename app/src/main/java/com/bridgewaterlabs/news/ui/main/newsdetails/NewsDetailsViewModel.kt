@@ -1,9 +1,6 @@
 package com.bridgewaterlabs.news.ui.main.newsdetails
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.bridgewaterlabs.news.repositories.NewsRepository
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 class NewsDetailsViewModel : ViewModel() {
