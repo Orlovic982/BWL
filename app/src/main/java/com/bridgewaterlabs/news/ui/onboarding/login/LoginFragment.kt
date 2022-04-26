@@ -35,9 +35,7 @@ class LoginFragment() : BaseFragment() {
 
     fun setupLogin() {
         binding.btnLogin.setOnClickListener() {
-            disableButton()
-            viewModel.login(viewModel.email.value.toString(), viewModel.password.value.toString())
-
+                  viewModel.login(viewModel.email.value.toString(), viewModel.password.value.toString())
         }
 
         viewModel.loginState.observe(
@@ -46,16 +44,14 @@ class LoginFragment() : BaseFragment() {
                 when (it) {
                     is LoginState.Success -> navigateHome()
                     is LoginState.Error -> {
-                        viewModel.email.value = ""
-                        viewModel.password.value = ""
+
                         Toast.makeText(
                             context,
-                            "Neces moci ove noci, probaj ponovo",
+                            it.message,
                             Toast.LENGTH_SHORT
                         ).show()
-                        enableButton()
                     }
-
+                    else -> {}
                 }
             }
         )
@@ -80,11 +76,5 @@ class LoginFragment() : BaseFragment() {
         }
     }
 
-    fun disableButton() {
-        binding.btnLogin.isEnabled = false
-    }
-    fun enableButton(){
-        binding.btnLogin.isEnabled = true
-    }
 
 }

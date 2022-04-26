@@ -11,8 +11,9 @@ class LoginViewModel(
     private val preferences: AuthPreferences,
     private val authRepository: AuthRepository
 ) : ViewModel() {
-    val email = MutableLiveData<String>("")
-    val password = MutableLiveData<String>("")
+    var email = MutableLiveData<String>("")
+    var password = MutableLiveData<String>("")
+    val loginButton = MutableLiveData<Boolean>(true)
 
     val loginState = MutableLiveData<LoginState>()
 
@@ -23,10 +24,11 @@ class LoginViewModel(
         compositeDisposable.dispose()
     }
 
-    fun login(email: String, password: String) {
+    fun login(emailInput: String, passwordInput: String) {
+        loginButton.value = false
 
         val flow = authRepository
-            .login(email, password)
+            .login(emailInput, passwordInput)
             .observeOn(AndroidSchedulers.mainThread())
 
         val disposable = flow.subscribe(
@@ -34,9 +36,11 @@ class LoginViewModel(
                 loginState.value = LoginState.Success
             },
             {
+                email.value=""
+                password.value=""
                 val error = ErrorLogin(it)
-                loginState.value=LoginState.Error(error.message)
-
+                loginState.value = LoginState.Error(error.message)
+                loginButton.value = true
             }
 
         )

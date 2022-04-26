@@ -9,13 +9,11 @@ import com.bridgewaterlabs.news.ui.common.BaseActivity
 
 class OnboardingActivity : BaseActivity() {
 
-    lateinit var preferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupBinding()
 
-        preferences = getSharedPreferences("myPref", MODE_PRIVATE)
     }
 
     private fun setupBinding() {
