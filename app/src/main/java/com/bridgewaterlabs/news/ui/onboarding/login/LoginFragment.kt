@@ -35,7 +35,9 @@ class LoginFragment() : BaseFragment() {
 
     fun setupLogin() {
         binding.btnLogin.setOnClickListener() {
+            disableButton()
             viewModel.login(viewModel.email.value.toString(), viewModel.password.value.toString())
+
         }
 
         viewModel.loginState.observe(
@@ -43,25 +45,22 @@ class LoginFragment() : BaseFragment() {
             Observer {
                 when (it) {
                     is LoginState.Success -> navigateHome()
-                    is LoginState.Error -> Toast.makeText(
-                        context,
-                        "Neces moci ove noci, probaj ponovo",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    is LoginState.Error -> {
+                        viewModel.email.value = ""
+                        viewModel.password.value = ""
+                        Toast.makeText(
+                            context,
+                            "Neces moci ove noci, probaj ponovo",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        enableButton()
+                    }
+
                 }
             }
         )
-
-        viewModel.errorLogin.observe(
-            viewLifecycleOwner,
-            Observer {
-                Toast.makeText(context, "Email or password are not valid", Toast.LENGTH_SHORT)
-                    .show()
-                viewModel.email.value = ""
-                viewModel.password.value = ""
-            }
-        )
     }
+
 
     fun setupNavigation() {
         binding.tvForgotPassword.setOnClickListener() {
@@ -74,9 +73,18 @@ class LoginFragment() : BaseFragment() {
             findNavController().navigate(action)
         }
     }
+
     fun navigateHome() {
         Intent(requireContext(), MainActivity::class.java).also {
             startActivity(it)
         }
     }
+
+    fun disableButton() {
+        binding.btnLogin.isEnabled = false
+    }
+    fun enableButton(){
+        binding.btnLogin.isEnabled = true
+    }
+
 }

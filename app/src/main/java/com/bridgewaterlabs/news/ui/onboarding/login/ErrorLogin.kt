@@ -6,8 +6,7 @@ class ErrorLogin(private val throwable: Throwable) {
     val message: String
         get() {
             return when (throwable) {
-                is HttpException -> "${throwable.code()} Message ${throwable.code()} "
-
+                is HttpException -> " ${throwable.code()} Message ${throwable.code()} "
                 else -> { "Invalid mail or password" }
             }
         }
