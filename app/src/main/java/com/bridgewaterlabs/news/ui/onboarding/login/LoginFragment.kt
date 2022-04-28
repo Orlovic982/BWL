@@ -12,7 +12,6 @@ import com.bridgewaterlabs.news.R
 import com.bridgewaterlabs.news.databinding.FragmentLoginBinding
 import com.bridgewaterlabs.news.ui.common.BaseFragment
 import com.bridgewaterlabs.news.ui.main.MainActivity
-import com.bridgewaterlabs.news.util.ResourceWrapper
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment() : BaseFragment() {
@@ -37,7 +36,10 @@ class LoginFragment() : BaseFragment() {
 
     fun setupLogin() {
         binding.btnLogin.setOnClickListener() {
-                  viewModel.login(viewModel.email.value.toString(), viewModel.password.value.toString())
+            viewModel.login(
+                viewModel.email.value.toString(),
+                viewModel.password.value.toString()
+            )
         }
 
         viewModel.loginState.observe(
@@ -45,10 +47,10 @@ class LoginFragment() : BaseFragment() {
             Observer {
                 when (it) {
                     is LoginState.Success -> navigateHome()
-                    is LoginState.InvalidCredentials->
-                    {
-                        toast(getString(R.string.invalid_username_or_password))
-                    }
+                    is LoginState.InvalidCredentials ->
+                        {
+                            toast(getString(R.string.invalid_username_or_password))
+                        }
                     is LoginState.Error -> {
                         toast(it.message)
                     }
@@ -57,7 +59,6 @@ class LoginFragment() : BaseFragment() {
             }
         )
     }
-
 
     fun setupNavigation() {
         binding.tvForgotPassword.setOnClickListener() {
@@ -77,12 +78,11 @@ class LoginFragment() : BaseFragment() {
         }
     }
 
-    fun toast(message:String){
+    fun toast(message: String) {
         Toast.makeText(
             context,
             message,
             Toast.LENGTH_SHORT
         ).show()
     }
-
 }

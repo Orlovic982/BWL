@@ -18,7 +18,7 @@ interface PublicApi {
     @GET("my-profile")
     fun getmyProfile(
         @Header("Authorization")
-        authorization: String = "Bearer 45|BBYeNe9zQReDhxegYdTMCUFQjwKoEME3vIxORbMS"
+        token: String
     ): Flowable<User>
 
     @POST("register")

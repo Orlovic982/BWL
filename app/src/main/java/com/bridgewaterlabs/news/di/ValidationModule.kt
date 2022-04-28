@@ -5,6 +5,6 @@ import com.bridgewaterlabs.news.util.ResourceWrapper
 import org.koin.dsl.module
 
 val validationModule = module {
-    single { ErrorLogin(get())}
-    single { ResourceWrapper(get())}
+    single { ErrorLogin(get()) }
+    single { ResourceWrapper(get()) }
 }

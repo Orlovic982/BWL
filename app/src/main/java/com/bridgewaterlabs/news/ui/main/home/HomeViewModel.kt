@@ -19,7 +19,9 @@ class HomeViewModel(
         compositeDisposable.dispose()
     }
 
+
     fun getProfile() {
+
         val flow = authRepository.getProfile()
             .observeOn(AndroidSchedulers.mainThread())
 

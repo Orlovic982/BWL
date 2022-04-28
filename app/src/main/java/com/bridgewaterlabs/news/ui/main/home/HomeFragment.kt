@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bridgewaterlabs.news.R
 import com.bridgewaterlabs.news.databinding.FragmentHomeBinding
 import com.bridgewaterlabs.news.model.NewsModel
+import com.bridgewaterlabs.news.preferences.AuthPreferences
 import com.bridgewaterlabs.news.ui.main.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment() : Fragment(), HomeAdapter.newsListener {
+class HomeFragment( ) : Fragment(), HomeAdapter.newsListener {
 
     lateinit var binding: FragmentHomeBinding
     private val viewmodel: HomeViewModel by viewModel()
@@ -30,17 +31,25 @@ class HomeFragment() : Fragment(), HomeAdapter.newsListener {
         binding.viewmodel = viewmodel
         binding.lifecycleOwner = viewLifecycleOwner
 
+
         bindAdapter()
-        bingSlideMenu()
+        getProfile()
+        //     bingSlideMenu()
 
         return binding.root
     }
 
-    private fun bingSlideMenu() {
-        binding.btnSlideMenu.setOnClickListener() { v ->
-            (activity as MainActivity).openCloseNavigationDrawer(v)
-        }
-    }
+   fun getProfile(){
+       binding.btnSlideMenu.setOnClickListener(){
+           viewmodel.getProfile()
+       }
+   }
+
+//    private fun bingSlideMenu() {
+//        binding.btnSlideMenu.setOnClickListener() { v ->
+//            (activity as MainActivity).openCloseNavigationDrawer(v)
+//        }
+//    }
 
     fun initFakeNews(): List<NewsModel> {
         return mutableListOf(

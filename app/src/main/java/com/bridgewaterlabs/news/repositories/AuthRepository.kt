@@ -21,6 +21,6 @@ class AuthRepository(
     }
 
     fun getProfile(): Flowable<User> {
-        return RetrofitInstance.getPublicApi().getmyProfile()
+        return RetrofitInstance.getPublicApi().getmyProfile("Bearer ${authPreferences.token}")
     }
 }
