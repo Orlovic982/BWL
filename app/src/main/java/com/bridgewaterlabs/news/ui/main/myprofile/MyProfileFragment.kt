@@ -12,9 +12,9 @@ class MyProfileFragment : Fragment() {
 
     lateinit var binding: FragmentMyProfileBinding
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
@@ -24,8 +24,6 @@ class MyProfileFragment : Fragment() {
         setupBackButton()
 
         return binding.root
-
-
     }
 
     fun setupBackButton() {
@@ -33,6 +31,4 @@ class MyProfileFragment : Fragment() {
             findNavController().navigateUp()
         }
     }
-
-
 }

@@ -5,7 +5,9 @@
     tools:context=".ui.main.newsdetails.NewsDetailsFragment">
 
     <data>
-
+<variable
+    name="viewmodel"
+    type="com.bridgewaterlabs.news.ui.main.newsdetails.NewsDetailsViewModel" />
     </data>
 <ScrollView
     android:layout_width="match_parent"

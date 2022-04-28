@@ -10,7 +10,8 @@
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/nav_drawer_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -116,7 +117,7 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/usericon"
                         android:src="@drawable/ic_user" />
@@ -140,7 +141,8 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/heart_colored"
                         android:src="@drawable/ic_heart_colored" />
@@ -164,7 +166,7 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/privacy_settings_icon"
                         android:src="@drawable/ic_privacy_settings" />
@@ -188,7 +190,7 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/language_icon"
                         android:src="@drawable/ic_language" />
@@ -212,7 +214,7 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/notification_icon_colored"
                         android:src="@drawable/ic_bell_colored" />

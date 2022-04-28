@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bridgewaterlabs.news.databinding.FragmentFavoritesBinding
 
-
 class FavoritesFragment : Fragment() {
     lateinit var binding: FragmentFavoritesBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
@@ -30,5 +30,4 @@ class FavoritesFragment : Fragment() {
             findNavController().navigateUp()
         }
     }
-
 }
